@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+body{
+    margin: 0;
+    font-size: 16px;
+    background-color: #203647;
+    font-weight: 400;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+}
+.home-box{
+    text-align: center;
+}
+
+.custom-box.hide{
+    display: none;
+}
+.custom-box{
+max-width: 700px;
+margin: 40px auto ;
+padding: 30px;
+
+border-radius: 10px;
+background-color: #8bcff3;
+}
+
+.home-box h3{
+    font-size: 30px;
+    color: #000000;
+    font-weight: bold;
+    margin-bottom: 15px;
+    line-height: 40px;
+}
+
+.home-box p{
+    font-size: 16px;
+    margin-bottom: 10px;
+    line-height: 40px;
+    color: #000000;
+    font-weight: 400;
+}
+
+.home-box p span{
+    font-weight: 800;
+}
+
+.home-box .btn{
+    margin-top: 10px;
+}
+
+.btn{
+    padding: 15px 40px;
+    background-color: #203647;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: medium;
+    cursor: pointer;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.quiz-box h4{
+    color: #203647;
+    line-height: 20px;
+}
+
+.quiz-box hr{
+    color: #000000;
+    margin-top: 10px;   
+    border-bottom: 1px solid #8f8989;
+}
+
+.quiz-box .question-text{
+    font-size: 22px;
+    color: #000000;
+    line-height: 28px;
+    font-weight: 400;
+    padding: 15px 0;
+    margin: 0;
+}
+
+/*.quiz-box .option-container{
+
+}*/
+
+.quiz-box .option-container .option{
+    background-color: #f5eded;
+    padding: 15px;
+    font-size: 16px;
+    line-height: 22px;
+    color: #000000;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    text-transform: capitalize;
+    opacity: 0;
+    animation: fadeIn 0.3s ease forwards;
+    position: relative;
+    overflow: hidden;
+}
+
+.quiz-box .option-container .option.already-answered{
+    pointer-events: none;
+}
+
+.quiz-box .option-container .option.correct::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: green;
+    z-index: -1;
+    animation: slideInLeft .5s ease forwards;
+}
+.quiz-box .option-container .option.wrong::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: red;
+    z-index: -1;
+    animation: slideInLeft .5s ease forwards;
+}
+
+@keyframes slideInLeft {
+    0%{
+        transform: translateX(-100%);
+    }
+    100%{
+        transform: translateX(0%);
+    }
+}
+
+.quiz-box .option-container .option.correct,.quiz-box .option-container .option.wrong{
+    color: #ffffff;
+}
+@keyframes fadeIn{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+.quiz-box .btn{
+    margin: 20px 0;
+}
+
+.quiz-box .answers-indicator hr{
+    border-top: 1px solid #8f8989;
+    
+}
+.quiz-box .answers-indicator div{
+    height: 40px;
+    width: 40px;
+    display: inline-block;
+    background-color: #f5eded;
+    border-radius: 50%;
+    margin-right: 10px;
+    margin-top: 15px;
+}
+
+.quiz-box .answers-indicator div.wrong{
+
+    background-color: red;
+    background-image: url("../img/wrong.png");
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.quiz-box .answers-indicator div.correct{
+    background-color:green;
+    background-image: url("../img/cor.png");
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.quiz-box .answers-indicator,
+.quiz-box .option-container,
+.quiz-box .question-text,
+.quiz-box .next-question-btn,
+.quiz-box .question-number{
+    width: 100%;
+    float: left;
+}
+
+.custom-box::before,
+.custom-box::after{
+    content: '';
+    clear: both;
+    display: table;
+}
+
+.result-box{
+    text-align: center;
+}
+
+.result-box h1{
+    font-size: 36px;
+    color: #203647;
+    line-height: 42px;
+}
+
+.result-box table{
+    width: 100%;
+    border-collapse: collapse;
+    margin: 30px 0;
+}
+.result-box table td{
+    border: 1px solid #8f8989;
+    padding: 8px 15px;
+    width: 50%;
+    text-align: left;
+    font-size: 18px;
+}
+.result-box .btn{
+    margin-right: 20px;
+}
